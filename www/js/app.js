@@ -252,9 +252,12 @@ angular.module('ionic-firebase-seed', ['ionic', 'firebase', 'angularMoment'])
 
   $stateProvider
     .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'templates/tabs.html',
+        controller: function(Auth) {
+            console.log('got here ');
+        }
   })
   .state('tab.following', {
     url: '/following',
@@ -318,13 +321,13 @@ angular.module('ionic-firebase-seed', ['ionic', 'firebase', 'angularMoment'])
       url: '/search',
       resolve: {
             'currentUser': ['Auth', function(Auth) {
-                return Auth.$requireSignIn();
+                return Auth.$waitForSignIn();
             }],
       },
       views: {
         'search': {
           templateUrl: 'templates/tab-search.html',
-          controller: function($scope, Users, $ionicModal) {
+          controller: function($scope, Users, $ionicModal, currentUser) {
               // Get Set the User term.
 
               $scope.results = [];
@@ -422,7 +425,7 @@ angular.module('ionic-firebase-seed', ['ionic', 'firebase', 'angularMoment'])
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab');
+  $urlRouterProvider.otherwise('/tab/search');
 })
 
 .controller('AppCtrl', function($scope, Auth, $rootScope, Users, $ionicModal, $state) {

@@ -5,6 +5,7 @@
     <ion-list>
       <ion-item class="item-remove-animate item-thumbnail-left item-text-wrap item-icon-right" ng-repeat="user in following" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
         <img ng-src="{{user.avatar_url}}">
+        
         <h2>{{user.login}} (aka {{user.additional.name}})</h2>
 
         <p>
