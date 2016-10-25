@@ -1,7 +1,7 @@
 Bye Bye LinkedIn (Ionic + Firebase + Github)
 =========================
 
-Simple concept that grew out of a nodeconf.eu session. LinkedIn is great for
+Simple concept that grew out of a (nodeConf.eu 2016)[http://www.nodeconf.eu/] session. LinkedIn is great for
 recruiters, but provides little for the dev. Most of what we do is visible on
 gitub, and our relationships are managed on Twitter. So why not find a way to
 swap the LinkedIn Connections for Github follower/following?
