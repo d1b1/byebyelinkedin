@@ -9,7 +9,10 @@ swap the LinkedIn Connections for Github follower/following?
 This is a simple ionic app, using firebase and github to manage github centric
 relationships.
 
-MIT License
+Its still very beta. Use on your own risk. If there is enough utility then this
+will go to the app stores. Maybe.
+
+### MIT License
 
 Copyright (c) 2016 Stephan L. Smith
 
