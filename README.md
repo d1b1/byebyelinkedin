@@ -9,7 +9,7 @@ follower/following?
 
 This is a simple ionic app, using firebase and github to manage github centric
 relationships. The simplest use case: *'At a conference, I want to link up
-with dev, and they are not on linkedIn.'*
+with a developer, and they are not on linkedIn. so...'*
 
 Its still very beta. Use on your own risk. If there is enough utility then this
 will go to the app stores. Maybe.
