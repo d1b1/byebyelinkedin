@@ -1,0 +1,34 @@
+<ion-view view-title="Your Following ({{ following.length }})">
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item class="item-remove-animate item-thumbnail-left item-text-wrap item-icon-right" ng-repeat="user in following" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{user.avatar_url}}">
+        <h2>{{user.login}} (aka {{user.additional.name}})</h2>
+
+        <p>
+            <span ng-if="user.additional && user.additional.company">
+                @{{user.additional.company}}
+            </span>
+
+            <span ng-if="user.additional && user.additional.location">
+                in {{ user.additional.location }}
+            </span>
+
+            <p ng-if="user.additional && user.additional.created_at">
+                Since:
+                <span am-time-ago="user.additional.created_at"></span>
+            </p>
+        </p>
+
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-balanced" ng-click="unfollow($index, user)">
+          Unfollow
+        </ion-option-button>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

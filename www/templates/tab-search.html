@@ -1,0 +1,40 @@
+<ion-view hide-nav-bar="true" view-title="Search Github Users">
+
+  <ion-header-bar align-title="left" show-search-hint class=" item-input-inset searchHeader">
+
+	  <label class="item-input-wrapper">
+		<i class="icon ion-search placeholder-icon postive searchIcon"></i>
+		<input type="text" id="term" name="term" ng-model="search.term" placeholder="Try a product, category or brand">
+	  </label>
+
+	  <button class="button button-clear" ng-click="showGuide($event, 'categories')">
+  	    Search
+      </button>
+
+  </ion-header-bar>
+
+  <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+
+    <ion-list>
+
+      <!-- <ion-item class="item-remove-animate item-avatar item-icon-right item-button-right" ng-if="results.length == 0" type="item-text-wrap">
+        Nothing found.
+      </ion-item> -->
+
+      <ion-item class="item-remove-animate item-avatar item-icon-right item-button-right" ng-repeat="user in results" type="item-text-wrap">
+        <img ng-src="{{user.avatar_url}}">
+
+        <h2>{{user.login}}</h2>
+
+        <i class="icon ion-ios-checkmark-outline" ng-if="user.added === true"></i>
+
+        <button class="button button-positive" ng-if="user.added !== true" ng-click="openFollow(user)">
+            <i class="icon ion-plus-round" ng-if="spinnerLogin !== user.login"></i>
+            <ion-spinner icon="ripple" ng-if="spinnerLogin === user.login"></ion-spinner>
+        </button>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

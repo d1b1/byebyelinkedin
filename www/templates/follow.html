@@ -1,0 +1,48 @@
+<ion-modal-view>
+
+    <ion-header-bar>
+      <h1 class="title">Follow</h1>
+      <button ng-click="closeModal()" class="button ion-close-round"></button>
+    </ion-header-bar>
+
+    <ion-content>
+
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img ng-src="{{ userInfo.avatar_url}}">
+            <h2>{{ user.login }}</h2>
+            <p>
+                {{ userInfo.updated_at | date: 'medium' }}
+            </p>
+          </div>
+
+          <div class="item item-body">
+            <p>
+              {{ userInfo.bio }}
+            </p>
+            <p ng-show="userInfo.email">
+              Email: {{ userInfo.email }}
+            </p>
+            <p ng-show="userInfo.company">
+              Company: {{ userInfo.company }}
+            </p>
+            <p ng-show="userInfo.location">
+              Where: {{ userInfo.location }}
+            </p>
+            <p>
+              <a href="#" class="subdued">{{ userInfo.following}} following</a>
+              <a href="#" class="subdued">{{ userInfo.followers}} followers</a>
+            </p>
+          </div>
+
+          <div class="item item-divider">
+              <button class="button button-balanced" ng-click="follow(userInfo);">
+                  Follow
+              </button>
+          </div>
+
+        </div>
+
+    </ion-content>
+  </ion-modal-view>
