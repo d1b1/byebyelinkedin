@@ -8,10 +8,14 @@ Twitter. So why not find a way to swap the LinkedIn Connections for Github
 follower/following?
 
 This is a simple ionic app, using firebase and github to manage github centric
-relationships.
+relationships. The simplest use case: *'At a conference, I want to link up
+with dev, and they are not on linkedIn.'*
 
 Its still very beta. Use on your own risk. If there is enough utility then this
 will go to the app stores. Maybe.
+
+### Seed
+This repo uses the ionic seed template. The tests are not wired up, yet.
 
 ### MIT License
 
